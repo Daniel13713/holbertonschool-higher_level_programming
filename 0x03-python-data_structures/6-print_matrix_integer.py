@@ -4,7 +4,7 @@ def print_matrix_integer(matrix=[[]]):
         for i in matrix:
             sep = " "
             for j in i:
-                print("{}".format(j), end=sep)
+                print("{:d}".format(j), end=sep)
                 if i.index(j) + 2 == len(i):
                     sep = "\n"
     return (0)
