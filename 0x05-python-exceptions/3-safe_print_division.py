@@ -10,4 +10,4 @@ def safe_print_division(a, b):
     else:
         return division
     finally:
-        print("inside result: {}".format(division))
+        print("Inside result: {}".format(division))
