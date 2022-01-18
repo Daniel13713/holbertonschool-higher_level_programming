@@ -42,3 +42,7 @@ Public instance method: def area(self): that returns the current square area
 #### 4. Access and update private attribute
 property def size(self): to retrieve it
 property setter def size(self, value): to set it
+
+#### 5. Printing a square
+Public instance method: def my_print(self): that prints in stdout the square with the character #:
+  - if size is equal to 0, print an empty line
