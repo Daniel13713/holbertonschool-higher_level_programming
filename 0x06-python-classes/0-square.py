@@ -1,5 +1,5 @@
-#!/usr/bin/pyhton3
-"""Class Saquare definition"""
+#!/usr/bin/python3
+"""Class Square definition"""
 
 
 class Square:
