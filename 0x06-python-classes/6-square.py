@@ -28,8 +28,8 @@ class Square:
             self.__size = size
 
         #: Position validations
-        if (type(position[0]) or type(position[1]) == int) and (
-            position[0] or position[1] < 0
+        if (type(position[0]) != int or type(position[1]) != int) or (
+            position[0] < 0 or position[1] < 0
         ):
             #: The positions should be integers
             raise TypeError("position must be a tuple of 2 positive integers")
