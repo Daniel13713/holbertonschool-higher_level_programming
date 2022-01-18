@@ -72,7 +72,7 @@ class Square:
         Return: Nothing
         """
         size = self.size
-        onePosition = self.position[1]
+        onePosition = self.position[0]
         if size == 0:
             print("")
         else:
