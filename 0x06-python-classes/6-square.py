@@ -17,24 +17,8 @@ class Square:
             - size (Private, int): size of the square
             - position (Private, tuple: (int, int)): coordinates of the square
         """
-        #: Size Validation
-        if type(size) != int:  #: if not isintance(size, int)
-            #: The size should be an integer
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            #: The size should be greater than 0
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-
-        #: Position validations
-        if (type(position[0]) != int or type(position[1]) != int) or (
-            position[0] < 0 or position[1] < 0
-        ):
-            #: The positions should be integers
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -61,7 +45,7 @@ class Square:
         """change the value of position"""
         #: Position validations
         if (type(value[0]) != int or type(value[1]) != int) or (
-            value[0] < 0 or value[1] < 0
+            value[0] < 0 or value[1] < 0 or not isinstance(value, tuple)
         ):
             #: The positions should be integers
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -75,17 +59,17 @@ class Square:
         Returns:
             Area of the square
         """
-        area = self.__size * self.__size
+        area = self.size * self.size
         return area
 
     def my_print(self):
         """that prints in stdout the square with the character #:
         if size is equal to 0, print an empty line
-        if position[0]>0 print position[0] spaces
+        if position[0]>0 print position[1] spaces
         Return: Nothing
         """
-        size = self.__size
-        onePosition = self.__position[0]
+        size = self.size
+        onePosition = self.position[1]
         if size == 0:
             print("")
         else:
