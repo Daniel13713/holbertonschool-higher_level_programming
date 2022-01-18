@@ -46,3 +46,10 @@ property setter def size(self, value): to set it
 #### 5. Printing a square
 Public instance method: def my_print(self): that prints in stdout the square with the character #:
   - if size is equal to 0, print an empty line
+
+#### 6. Coordinates of a square
+Private instance attribute: position:
+- property def position(self): to retrieve it
+- property setter def position(self, value): to set it:
+    - position must be a tuple of 2 positive integers, otherwise raise a TypeError exception with message position must be a tuple of 2 positive integers
+position should be use by using space - Don’t fill lines by spaces when position[1] > 0
