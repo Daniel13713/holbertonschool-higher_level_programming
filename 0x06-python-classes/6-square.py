@@ -45,7 +45,10 @@ class Square:
         """change the value of position"""
         #: Position validations
         if (type(value[0]) != int or type(value[1]) != int) or (
-            value[0] < 0 or value[1] < 0 or not isinstance(value, tuple)
+            value[0] < 0
+            or value[1] < 0
+            or not isinstance(value, tuple)
+            or len(value) != 2
         ):
             #: The positions should be integers
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -69,7 +72,7 @@ class Square:
         Return: Nothing
         """
         size = self.size
-        onePosition = self.position[0]
+        onePosition = self.position[1]
         if size == 0:
             print("")
         else:
