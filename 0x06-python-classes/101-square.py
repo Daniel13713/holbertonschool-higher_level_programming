@@ -18,13 +18,16 @@ class Square:
 
     def __str__(self):
         """method that return a sqaure like my_print function"""
+        msg2 = ""
         if self.size == 0:
             return ""
         else:
             msg1 = "\n" * self.position[1]
-            msg2 = " " * self.position[0] + "#" * self.size + "\n"
-            msg3 = msg2 * self.size
-            return msg1 + msg3
+            for i in range(self.size):
+                msg2 += " " * self.position[0] + "#" * self.size
+                if (i != self.size - 1):
+                    msg2 += "\n"
+            return msg1 + msg2
 
     @property
     def size(self):
