@@ -28,6 +28,22 @@ class Square:
         else:
             self.__size = value
 
+    def area(self):
+        """Instance method: calculate the area of the square"""
+        area = self.size * self.size
+        return area
+
+    def my_print(self):
+        """that prints in stdout the square with the character #:"""
+        if self.size == 0:
+            print("")
+        else:
+            for x in range(self.position[1]):
+                print("")
+            for y in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
+
     @property
     def position(self):
         """int: return the value of position"""
@@ -42,19 +58,3 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
-
-    def area(self):
-        """Instance method: calculate the area of the square"""
-        area = self.size * self.size
-        return area
-
-    def my_print(self):
-        """that prints in stdout the square with the character #:"""
-        if self.size == 0:
-            print("")
-        else:
-            for x in range(self.position[1]):
-                print("", end="")
-            for y in range(self.size):
-                print(" " * self.position[0], end="")
-                print("#" * self.size)
