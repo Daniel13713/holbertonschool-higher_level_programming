@@ -8,15 +8,14 @@ class Square:
     Attributes:
         - getter, setter size (int): return and change the value of the size
         - getter, setter position (tuple: (int, int))
-        - area (int): calculate the area of the square
-    """
+        - area (int): calculate the area of the square"""
 
     def __init__(self, size=0, position=(0, 0)):
         """Initilize a square
         Attributtes:
             - size (Private, int): size of the square
-            - position (Private, tuple: (int, int)): coordinates of the square
-        """
+            - position (Private, tuple: (int, int)):
+                coordinates of the square"""
         self.size = size
         self.position = position
 
@@ -44,8 +43,10 @@ class Square:
     def position(self, value):
         """change the value of position"""
         #: Position validations
-        if (type(value[0]) != int or type(value[1]) != int) or (
-            value[0] < 0
+        if (
+            type(value[0]) != int
+            or type(value[1]) != int
+            or value[0] < 0
             or value[1] < 0
             or not isinstance(value, tuple)
             or len(value) != 2
@@ -71,15 +72,12 @@ class Square:
         if position[0]>0 print position[1] spaces
         Return: Nothing
         """
-        size = self.size
-        onePosition = self.position[0]
-        if size == 0:
+        if self.size == 0:
             print("")
         else:
-            for x in range(size):
-                if onePosition > 0:
-                    for y in range(onePosition):
-                        print("", end=" ")
-                for y in range(size):
+            for x in range(self.size):
+                for y in range(self.position[1]):
+                    print(" ", end="")
+                for y in range(self.size):
                     print("{}".format("#"), end="")
                 print("")
