@@ -48,7 +48,7 @@ class Square:
             or type(value[1]) != int
             or value[0] < 0
             or value[1] < 0
-            or not isinstance(value, tuple)
+            or type(value) != tuple
             or len(value) != 2
         ):
             #: The positions should be integers
@@ -58,9 +58,7 @@ class Square:
             self.__position = value
 
     def area(self):
-        """Instance method
-        Note: calculate the area of the square
-        Returns: Area of the square"""
+        """Instance method: calculate the area of the square"""
         area = self.size * self.size
         return area
 
@@ -69,12 +67,8 @@ class Square:
         if self.size == 0:
             print("")
         else:
-            for x in range(self.size):
-                if self.position[1] > 0:
-                    print(" ", end="")
-                else:
-                    for y in range(self.position[0]):
-                        print(" ", end="")
-                for y in range(self.size):
-                    print("{}".format("#"), end="")
+            for x in range(self.position[1]):
                 print("")
+            for y in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
