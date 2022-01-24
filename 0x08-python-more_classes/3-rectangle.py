@@ -6,7 +6,9 @@ class Rectangle:
     """Class Rectangle without attributes
     Attirbutes:
         - getter, setter width(int)
-        - getter and setter height(int)"""
+        - getter and setter height(int)
+        - publics methos area and perimeter
+        - str method: string representation"""
 
     def __init__(self, width=0, height=0):
 
@@ -60,5 +62,8 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             msg = ""
         else:
-            msg += (("#" * self.width) + "\n") * self.height
+            for i in range(self.height):
+                msg += "#" * self.width
+                if i != self.height - 1:
+                    msg += "\n"
         return msg

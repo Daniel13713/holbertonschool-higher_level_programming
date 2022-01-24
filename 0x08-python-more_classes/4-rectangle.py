@@ -7,7 +7,8 @@ class Rectangle:
     Attirbutes:
         - getter, setter width(int)
         - getter and setter height(int)
-        - publics methos area and perimeter"""
+        - publics methos area and perimeter
+        - str method: string representation"""
 
     def __init__(self, width=0, height=0):
 
@@ -54,3 +55,22 @@ class Rectangle:
             return 0
         else:
             return (self.width + self.height) * 2
+
+    def __str__(self):
+        """method that return a string representation to user"""
+        msg = ""
+        if self.width == 0 or self.height == 0:
+            msg = ""
+        else:
+            for i in range(self.height):
+                msg += "#" * self.width
+                if i != self.height - 1:
+                    msg += "\n"
+        return msg
+
+    def __repr__(self) -> str:
+        """Method that return a string representation
+        to be able to recreate a new instance by using eval()
+        to the developer"""
+        msg = "Rectangle({0}, {1})".format(self.width, self.height)
+        return msg
