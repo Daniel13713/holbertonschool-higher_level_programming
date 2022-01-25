@@ -91,6 +91,30 @@ number in the rows in the matrix (must be lists)
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+list in a list in the rows in the matrix (must be only lists)
+-----------------------------
+    >>> matrix = [[[1, 2]], [1, 2]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+tuple in a list in the rows in the matrix (must be only lists)
+-----------------------------
+    >>> matrix = [[(1, 2)], [1, 2]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+tuple in the rows in the matrix (must be only lists)
+-----------------------------
+    >>> matrix = [(1, 2), [1, 2]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 ZeroDivisionError cases:
 ============================
     >>> matrix = [[1.5, 2.6, 3], [4, 0, 3], [3, 4, 10]]
