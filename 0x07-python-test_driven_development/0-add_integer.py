@@ -14,8 +14,4 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if type(b) not in [int, float]:
         raise TypeError("b must be an integer")
-    if a == a + 1:
-        raise OverflowError("a is too large")
-    if b == b + 1:
-        raise OverflowError("a is too large")
     return int(a) + int(b)

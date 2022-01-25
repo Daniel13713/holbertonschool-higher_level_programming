@@ -1,40 +1,100 @@
+=============================
 The ``0-add_integer`` module
-======================
+=============================
 
 Using ``add_integer``
--------------------
+-----------------------------
 
 First import ``add_integer`` from the ``0_add_integer`` module:
 
     >>> add_integer = __import__("0-add_integer").add_integer
 
-Now use it:
+Simple cases:
+=============================
+
+integer in a, integer in b
+-----------------------------
 
     >>> add_integer(0, 1)
     1
     >>> add_integer(-103, -2)
     -105
+    >>> add_integer(666666666, 1234567)
+    667901233
+    >>> add_integer(2)
+    100
 
+float, integer in a, float in b
+-----------------------------
+
+    >>> add_integer(3.24, 6.99)
+    9
+    >>> add_integer(-103, 2.9)
+    -101
+
+TypeError cases:
+=============================
+
+string in a, integer in b
+-----------------------------
 
     >>> add_integer("a", 3)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-    >>> add_integer("a", "Hello")
+
+Boolean in a, integer in b
+-----------------------------
+
+    >>> add_integer(False, 3)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-    >>> add_integer(4, "3")
+
+integer in a, string in b
+-----------------------------
+
+    >>> add_integer(2, "Hello")
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
-    >>> add_integer(3.24, 6.99)
-    9
+
+Boolean in a, list in b
+-----------------------------
+
+    >>> add_integer(4, [2, "Hello"])
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+tuple in a, list in b
+-----------------------------
+
+    >>> add_integer((2, 3), [2, "Hello"])
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+ None in a, nothing in b
+-----------------------------
+
     >>> add_integer(None)
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-    >>> add_integer(1e10000, 1e200)
+
+None in a, integer in b
+-----------------------------
+
+    >>> add_integer(None, 12)
     Traceback (most recent call last):
     ...
-    OverflowError: a is too large
+    TypeError: a must be an integer
+
+Nothing
+-----------------------------
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
