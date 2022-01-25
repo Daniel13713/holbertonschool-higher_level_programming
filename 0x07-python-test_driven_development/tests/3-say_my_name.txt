@@ -1,36 +1,77 @@
+============================
 The ``3-say_my_name`` module
-======================
+============================
 
 Using ``say_my_name``
--------------------
+-----------------------------
 
 First import ``say_my_name`` from the ``3-say_my_name`` module:
 
     >>> say_my_name = __import__("3-say_my_name").say_my_name
 
-Now use it:
+Simple cases:
+============================
 
+Two simples string
+-----------------------------
     >>> say_my_name("Daniel", "Du")
     My name is Daniel Du
 
+One string and vacue argument
+-----------------------------
     >>> say_my_name("Daniel", )
     My name is Daniel 
 
     >>> say_my_name("", "")
     My name is  
 
+TypeError cases:
+============================
+
+None in the second position
+-----------------------------
     >>> say_my_name("Walter", None)
     Traceback (most recent call last):
     ...
     TypeError: last_name must be a string
 
+None in the first position
+-----------------------------
     >>> say_my_name(None, "tal")
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
 
+number in the first position
+-----------------------------
     >>> say_my_name(1231, None)
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+
+list in the first position
+-----------------------------
+    >>> say_my_name(["daniel"], "fine")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Other cases (maybe not necesary):
+============================
+
+Nonoone argument
+-----------------------------
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+SyntaxError
+-----------------------------
+    >>> say_my_name(,)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+
  
