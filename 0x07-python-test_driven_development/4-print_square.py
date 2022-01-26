@@ -10,7 +10,7 @@ def print_square(size):
     """that prints in stdout the square with the character #:
     Size must be an integer
     Return: nothing"""
-    if type(size) != int:  #: if not isintance(size, int)
+    if type(size) != int or size != size:  #: if not isintance(size, int)
         raise TypeError("size must be an integer")
     elif size < 0:
         raise ValueError("size must be >= 0")

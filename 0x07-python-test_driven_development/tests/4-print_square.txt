@@ -55,6 +55,13 @@ None size (must be integer)
     ...
     TypeError: size must be an integer
 
+float("nan") size (must be integer)
+-----------------------------
+    >>> print_square(float("nan"))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
 negative integer size (must be integer greater than 0)
 -----------------------------
     >>> print_square(-10)
@@ -71,5 +78,13 @@ Nothin in the argument (must be integer)
     Traceback (most recent call last):
     ...
     TypeError: print_square() missing 1 required positional argument: 'size'
+
+
+NaN size (must be integer)
+-----------------------------
+    >>> print_square(NaN)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'NaN' is not defined
 
 
