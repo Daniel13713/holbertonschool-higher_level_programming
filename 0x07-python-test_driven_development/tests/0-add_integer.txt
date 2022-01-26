@@ -91,6 +91,14 @@ None in a, integer in b
     ...
     TypeError: a must be an integer
 
+float(NaN) in a, integer in b
+-----------------------------
+
+    >>> add_integer(float("nan"), 12)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
 Nothing
 -----------------------------
 
