@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
 """
+from cmath import nan
 import unittest
+
+from numpy import NaN
 
 max_integer = __import__("6-max_integer").max_integer
 
