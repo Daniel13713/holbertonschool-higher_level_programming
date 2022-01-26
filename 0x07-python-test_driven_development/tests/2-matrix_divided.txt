@@ -39,6 +39,14 @@ None in the matrix
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+float("nan") in the matrix
+-----------------------------
+    >>> matrix = [[1.5, 2, 3], [4, 2, float("nan")]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 string in the matrix
 -----------------------------
     >>> matrix = [[1.5, "2", 3], [4, 2, 3]]
@@ -122,3 +130,10 @@ ZeroDivisionError cases:
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+NaN in the matrix
+-----------------------------
+    >>> matrix_divided([[1.5, 2, 3], [4, 2, NaN]], 3)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'NaN' is not defined
