@@ -2,8 +2,22 @@
 """This module have a class that inherits
 from BaseGeometry"""
 
-BaseGeometry = __import__("7-base_geometry").BaseGeometry
-"""Import BaseGeometry class"""
+
+class BaseGeometry:
+    """class BaseGeometry
+    arg:
+        public method: area, integer_validator"""
+
+    def area(self):
+        """public method, calculate the area"""
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """Validates Value. Name is always str"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        elif value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
