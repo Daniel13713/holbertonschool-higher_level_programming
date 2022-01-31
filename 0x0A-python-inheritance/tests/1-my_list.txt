@@ -1,0 +1,97 @@
+=============================
+The ``1-my_list`` module
+=============================
+
+Using ``MyList``
+-----------------------------
+
+First import ``MyList`` from the ``1-my_list`` module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Simple cases:
+=============================
+
+list of positive integers
+-----------------------------
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(4)
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.append(1)
+>>> print(my_list)
+[5, 4, 3, 2, 1]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[5, 4, 3, 2, 1]
+
+list of negative integers and zero
+-----------------------------
+>>> my_list = MyList()
+>>> my_list.append(-10)
+>>> my_list.append(-1024)
+>>> my_list.append(0)
+>>> my_list.append(1024)
+>>> print(my_list)
+[-10, -1024, 0, 1024]
+>>> my_list.print_sorted()
+[-1024, -10, 0, 1024]
+>>> print(my_list)
+[-10, -1024, 0, 1024]
+
+list of floats numbers
+-----------------------------
+>>> my_list = MyList()
+>>> my_list.append(3.14)
+>>> my_list.append(-0.59)
+>>> my_list.append(10.45)
+>>> my_list.append(1.03)
+>>> print(my_list)
+[3.14, -0.59, 10.45, 1.03]
+>>> my_list.print_sorted()
+[-0.59, 1.03, 3.14, 10.45]
+>>> print(my_list)
+[3.14, -0.59, 10.45, 1.03]
+
+vacue list
+-----------------------------
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
+
+Error cases (No handling):
+=============================
+
+No numbers
+-----------------------------
+>>> my_list = MyList()
+>>> my_list.append("z")
+>>> my_list.append("a")
+>>> my_list.append("x")
+>>> my_list.append("b")
+>>> print(my_list)
+['z', 'a', 'x', 'b']
+>>> my_list.print_sorted()
+['a', 'b', 'x', 'z']
+>>> print(my_list)
+['z', 'a', 'x', 'b']
+
+None values
+-----------------------------
+>>> my_list = MyList()
+>>> my_list.append(None)
+>>> my_list.append(10)
+>>> print(my_list)
+[None, 10]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'int' and 'NoneType'
+>>> print(my_list)
+[None, 10]
