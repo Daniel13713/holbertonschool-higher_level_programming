@@ -11,7 +11,5 @@ class MyList(list):
     """
 
     def print_sorted(self):
-        """Copy a list and print the copy sorted"""
-        copy = self.copy()
-        copy.sort()
-        print(copy)
+        """Use sorted to sort the list"""
+        print(sorted(self))
