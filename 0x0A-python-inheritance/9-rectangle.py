@@ -14,8 +14,9 @@ class Rectangle(BaseGeometry):
         """Init method; width, height
         validation with integer_validator first"""
 
+        self.integer_validator("width", width)
         self.__width = width
-        BaseGeometry.integer_validator(self, "height", height)
+        self.integer_validator("height", height)
         self.__height = height
 
     def area(self):
