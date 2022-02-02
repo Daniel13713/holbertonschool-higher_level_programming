@@ -11,7 +11,6 @@ class Student:
 
     def __init__(self, first_name, last_name, age):
         """instantiation"""
-
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -22,12 +21,17 @@ class Student:
         in this list must be retrieved.
         Otherwise, all attributes must be retrieved"""
 
-        data = {'first_name': self.first_name,
-                'age': self.age, 'last_name': self.last_name}
+        data = {
+            'first_name': self.first_name,
+            'age': self.age,
+            'last_name': self.last_name
+        }
         if type(attrs) is list:
-            args = {arg: data[arg] for arg in attrs
-                    if type(arg) is str
-                    and arg in ['first_name', 'age', 'last_name']}
+            args = {
+                arg: data[arg] for arg in attrs
+                if type(arg) is str
+                and arg in ['first_name', 'age', 'last_name']
+            }
             return args
         else:
             data_json = self.__dict__
