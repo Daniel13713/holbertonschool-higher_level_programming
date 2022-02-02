@@ -40,4 +40,6 @@ class Student:
         A dictionary key will be the public attribute name
         A dictionary value will be the value of the public attribute"""
 
-        self.__dict__ = json
+        self.first_name = json["first_name"]
+        self.last_name = json["last_name"]
+        self.age = json["age"]
