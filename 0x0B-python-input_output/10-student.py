@@ -26,12 +26,9 @@ class Student:
             'age': self.age,
             'last_name': self.last_name
         }
+        k = ['first_name', 'age', 'last_name']
         if type(attrs) is list:
-            args = {
-                arg: data[arg] for arg in attrs
-                if type(arg) is str
-                and arg in ['first_name', 'age', 'last_name']
-            }
+            args = {a: data[a] for a in attrs if type(a) is str and a in k}
             return args
         else:
             data_json = self.__dict__
