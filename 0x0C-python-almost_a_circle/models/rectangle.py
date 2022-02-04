@@ -11,7 +11,7 @@ class Rectangle(Base):
     """Class Rectangle
     Arg:
         - Private instances attributes:
-            - width, height,, x, y
+            - width, height,, x, y with getter and setters
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
