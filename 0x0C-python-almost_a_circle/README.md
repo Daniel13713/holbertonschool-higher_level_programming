@@ -1,0 +1,26 @@
+# Python - Almost a circle
+
+
+### Background Context
+The AirBnB project is a big part of the Higher level curriculum. This project will help you be ready for it.
+
+In this project, you will review everything about Python:
+
+- Import
+- Exceptions
+- Class
+- Private attribute
+- Getter/Setter
+- Class method
+- Static method
+- Inheritance
+- Unittest
+- Read/Write file
+- args and kwargs
+  - [blog](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)
+  - [Optional Arguments in Python With *args(unpack iterables) and **kwargs(unpack dictionaries)](https://www.youtube.com/watch?v=WcTXxX3vYgY&ab_channel=RealPython)
+  - [more about * and **](https://realpython.com/python-kwargs-and-args/)
+  - [Wrapper functions??](https://www.geeksforgeeks.org/function-wrappers-in-python/)
+- Serialization/Deserialization
+- JSON
+![Serialitation - Deserialitation]()
