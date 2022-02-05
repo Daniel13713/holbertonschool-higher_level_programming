@@ -11,10 +11,23 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Constructor with only id instance"""
+        """
+        Constructor with only id instance
+        *you can assume that id is an integer
+        """
 
-        if id is not None:
-            self.id = id
+        self.id = id
+
+    @property
+    def id(self):
+        """getter if id"""
+        return self._id
+
+    @id.setter
+    def id(self, value):
+        """setter of the id"""
+        if value is not None:
+            self._id = value
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            self._id = Base.__nb_objects

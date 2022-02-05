@@ -23,6 +23,9 @@ In this project, you will review everything about Python:
   - [Documentation oficial](https://docs.python.org/3/library/unittest.html)
   - [Side Effects]()
     - [Single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+  - [catch a raise error with unittest](https://www.youtube.com/watch?v=cdxRMjYDrmg&ab_channel=ParisNakitaKejser)
+  - [Test exception, asserRiase, error_code](https://www.youtube.com/watch?v=LxbiAHGkPhk&ab_channel=AnInsightfulTechie)
+  - [assertRaise and AssertRaiseRegex](https://www.tutorialspoint.com/unittest_framework/unittest_framework_exceptions_test.htm)
 
 - Read/Write file
 
