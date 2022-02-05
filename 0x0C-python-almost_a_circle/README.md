@@ -52,4 +52,7 @@ commits:
 
 #### [1. Base class](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/master/0x0C-python-almost_a_circle/models/base.py)
 
-#### [2. First Rectangle](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/master/0x0C-python-almost_a_circle/models/rectangle.py)
+#### [2. Rectangle](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/master/0x0C-python-almost_a_circle/models/rectangle.py)
+  - [area Method](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/5002134d000a267c20418bf98496e0f2dd6ae277/0x0C-python-almost_a_circle/models/rectangle.py#L89)
+  - [Display Method](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/5002134d000a267c20418bf98496e0f2dd6ae277/0x0C-python-almost_a_circle/models/rectangle.py#L93)
+  - [__str__ method](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/5002134d000a267c20418bf98496e0f2dd6ae277/0x0C-python-almost_a_circle/models/rectangle.py#L102)
