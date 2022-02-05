@@ -44,6 +44,9 @@ commits:
 - :stop_sign: some don't work
 - :rotating_light: Priority
 - :construction: review test cases
+- :wilted_flower: Doubts, not sure
+- :deciduous_tree: working!!
+- :arrows_counterclockwise: update a script
 
 ## Parts of the Project
 
