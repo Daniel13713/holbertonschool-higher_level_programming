@@ -92,9 +92,10 @@ class Rectangle(Base):
 
     def display(self):
         """that prints in stdout the square with the character #:"""
-        msg = ""
+        msg = "\n" * self.y
         for y in range(self.height):
-            msg += "#" * self.width + "\n"
+            pos_x = " " * self.x
+            msg += pos_x + "#" * self.width + "\n"
         print(msg, end="")
         return msg
 

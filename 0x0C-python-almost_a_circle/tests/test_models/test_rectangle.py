@@ -92,6 +92,17 @@ class TetsRectangle_01_methods(unittest.TestCase):
         result3 = "##\n##\n"
         self.assertEqual(rd3.display(), result3)
 
+        """Hangling x and y"""
+        rd4 = Rectangle(2, 2, 2, 2)
+        result4 = "\n\n  ##\n  ##\n"
+        self.assertEqual(rd4.display(), result4)
+        rd5 = Rectangle(2, 2, 2, 0)
+        result5 = "  ##\n  ##\n"
+        self.assertEqual(rd5.display(), result5)
+        rd6 = Rectangle(2, 3, 3, 1)
+        result6 = "\n   ##\n   ##\n   ##\n"
+        self.assertEqual(rd6.display(), result6)
+
     def test_06_init_str(self):
         """-----Test str method------"""
 
