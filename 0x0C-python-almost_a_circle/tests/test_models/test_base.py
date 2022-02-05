@@ -3,6 +3,7 @@
 Unittest for Class Base
 """
 
+
 from models.base import Base
 import unittest
 
@@ -26,7 +27,9 @@ class TetsBaseClass(unittest.TestCase):
         base2 = Base()
         self.assertEqual(base2.id, 2)
         self.assertEqual(Base().id, 3)
-        base4 = Base()
+        base4 = Base(4)
+        self.assertEqual(base4.id, 4)
+        base5 = Base()
         self.assertEqual(base4.id, 4)
 
     def test_negative_numbers(self):
@@ -35,5 +38,9 @@ class TetsBaseClass(unittest.TestCase):
         self.assertEqual(base1.id, -1)
         base2 = Base(-1024)
         self.assertEqual(base2.id, -1024)
-        base3 = Base(0)
-        self.assertEqual(base3.id, 0)
+        base3 = Base(-34)
+        self.assertEqual(base3.id, -34)
+
+
+if __name__ == "__main__":
+    unittest.main()

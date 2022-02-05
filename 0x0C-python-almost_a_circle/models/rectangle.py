@@ -12,6 +12,8 @@ class Rectangle(Base):
     Arg:
         - Private instances attributes:
             - width, height,, x, y with getter and setters
+        Public method:
+            -area
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -82,3 +84,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = value
+
+    def area(self):
+        """Calculate the are of the rectangle"""
+        return self.height * self.width
