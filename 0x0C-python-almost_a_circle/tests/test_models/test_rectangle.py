@@ -76,6 +76,22 @@ class TetsRectangle_01_methods(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(7, 0, 6).area()
 
+    def test_05_init_display(self):
+        """Display method"""
+
+        rd1 = Rectangle(1, 1)
+        result1 = "#\n"
+        self.assertEqual(rd1.display(), result1)
+        rd2 = Rectangle(1, 2)
+        result2 = "#\n#\n"
+        self.assertEqual(rd2.display(), result2)
+        rd3 = Rectangle(2, 1)
+        result3 = "##\n"
+        self.assertEqual(rd3.display(), result3)
+        rd3 = Rectangle(2, 2)
+        result3 = "##\n##\n"
+        self.assertEqual(rd3.display(), result3)
+
 
 def suite():
     suite = unittest.TestSuite()

@@ -14,6 +14,7 @@ class Rectangle(Base):
             - width, height,, x, y with getter and setters
         Public method:
             -area
+            -display
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -88,3 +89,11 @@ class Rectangle(Base):
     def area(self):
         """Calculate the are of the rectangle"""
         return self.height * self.width
+
+    def display(self):
+        """that prints in stdout the square with the character #:"""
+        msg = ""
+        for y in range(self.height):
+            msg += "#" * self.width + "\n"
+        print(msg, end="")
+        return msg
