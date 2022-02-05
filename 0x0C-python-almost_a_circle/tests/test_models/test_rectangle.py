@@ -77,7 +77,7 @@ class TetsRectangle_01_methods(unittest.TestCase):
             Rectangle(7, 0, 6).area()
 
     def test_05_init_display(self):
-        """Display method"""
+        """-----Display method-----"""
 
         rd1 = Rectangle(1, 1)
         result1 = "#\n"
@@ -91,6 +91,17 @@ class TetsRectangle_01_methods(unittest.TestCase):
         rd3 = Rectangle(2, 2)
         result3 = "##\n##\n"
         self.assertEqual(rd3.display(), result3)
+
+    def test_06_init_str(self):
+        """-----Test str method------"""
+
+        rs1 = Rectangle(1, 2, 3, 4, 5)
+        str1 = "[Rectangle] (5) 3/4 - 1/2"
+        self.assertEqual(rs1.__str__(), str1)
+
+        rs2 = Rectangle(1, 2, 0, 0, 34)
+        str2 = "[Rectangle] (34) 0/0 - 1/2"
+        self.assertEqual(rs2.__str__(), str2)
 
 
 def suite():
