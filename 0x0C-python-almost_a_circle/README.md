@@ -40,7 +40,10 @@ In this project, you will review everything about Python:
 - JSON
 ![Serialitation - Deserialitation](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/master/0x0C-python-almost_a_circle/images/Serialization.PNG)
 
-
+commits:
+- :stop_sign: some don't work
+- :rotating_light: Priority
+- :construction: review test cases
 
 ## Parts of the Project
 
