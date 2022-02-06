@@ -27,6 +27,7 @@ In this project, you will review everything about Python:
   - [Documentation oficial](https://docs.python.org/3/library/unittest.html)
   - [Side Effects]()
     - [Single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle)
+    - [Uniform access principle](https://en.wikipedia.org/wiki/Uniform_access_principle#Python)
   - [catch a raise error with unittest](https://www.youtube.com/watch?v=cdxRMjYDrmg&ab_channel=ParisNakitaKejser)
   - [Test exception, asserRiase, error_code](https://www.youtube.com/watch?v=LxbiAHGkPhk&ab_channel=AnInsightfulTechie)
   - [assertRaise and AssertRaiseRegex](https://www.tutorialspoint.com/unittest_framework/unittest_framework_exceptions_test.htm)
@@ -46,6 +47,9 @@ In this project, you will review everything about Python:
 
 - JSON
 ![Serialitation - Deserialitation](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/master/0x0C-python-almost_a_circle/images/Serialization.PNG)
+
+- VsCode
+  - [Change a pattern](https://www.jasoft.org/Blog/post/buscar-y-reemplazar-en-visual-studio-code-cambiando-mayusculas-por-minusculas)
 
 commits:
 - :stop_sign: some don't work
