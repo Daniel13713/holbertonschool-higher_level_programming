@@ -10,14 +10,16 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Class Square
     Arg:
+    ----
         - Private instances attributes:
-            - width, height,, x, y with getter and setters
-            (all initializate in super -> Rectnagle)
+        -------------------------------
+        size, x, y with getter and setters
         Public method:
-            -area
-            -display
-            - __str__
-            - update
+        --------------
+        area(width, height) -> int
+        display(self) -> str
+        __str__(self) -> str
+        update(self, *args, **kwargs) -> Nothing
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -39,3 +41,14 @@ class Square(Rectangle):
         return "[Square] ({0}) {1}/{2} - {3}".format(
             self.id, self.x, self.y, self.width
         )
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+
+        attr = ["id", "size", "x", "y"]
+        if len(args) != 0:
+            for key, value in zip(attr, args):
+                setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

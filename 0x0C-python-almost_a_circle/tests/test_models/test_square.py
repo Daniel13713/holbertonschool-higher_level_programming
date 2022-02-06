@@ -104,6 +104,54 @@ class TetsSquare_01_methods(unittest.TestCase):
         str2 = "[Square] (34) 0/0 - 2"
         self.assertEqual(rs2.__str__(), str2)
 
+    def test_07_init_update(self):
+        """Test update method"""
+
+        """only with *args"""
+        ru1 = Square(1, 0, 0, 1)
+        r1 = "[Square] (1) 0/0 - 1"
+        self.assertEqual(ru1.__str__(), r1)
+        ru1.update(0, 1, 2, 2)
+        r2 = "[Square] (0) 2/2 - 1"
+        self.assertEqual(ru1.__str__(), r2)
+        ru1.update(8, 100, 10, 3)
+        r2 = "[Square] (8) 10/3 - 100"
+        self.assertEqual(ru1.__str__(), r2)
+        ru1.update(100, 23)
+        r2 = "[Square] (100) 10/3 - 23"
+        self.assertEqual(ru1.__str__(), r2)
+        ru1.update()
+        r2 = "[Square] (100) 10/3 - 23"
+        self.assertEqual(ru1.__str__(), r2)
+
+        """With *args and **kwargs"""
+        r = Square(4, 0, 3, 1)
+        r2 = "[Square] (1) 0/3 - 4"
+        self.assertEqual(r.__str__(), r2)
+        """Case not arguments"""
+        r.update()
+        r2 = "[Square] (1) 0/3 - 4"
+        self.assertEqual(r.__str__(), r2)
+        r.update(id=100, x=10)
+        r2 = "[Square] (100) 10/3 - 4"
+        self.assertEqual(r.__str__(), r2)
+        r.update(id=10, size=137)
+        r2 = "[Square] (10) 10/3 - 137"
+        self.assertEqual(r.__str__(), r2)
+        r.update(1, 2, 3, id=100, x=10)
+        r2 = "[Square] (1) 3/3 - 2"
+        self.assertEqual(r.__str__(), r2)
+        r.update(113, id=100, x=10)
+        r2 = "[Square] (113) 3/3 - 2"
+        self.assertEqual(r.__str__(), r2)
+        r.update(id=100, x=10)
+        r2 = "[Square] (100) 10/3 - 2"
+        self.assertEqual(r.__str__(), r2)
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r.update(id=100, x="10")
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            r.update(size="wrong", x="10")
+
 
 if __name__ == "__main__":
     unittest.main(failfast=True, exit=False)
