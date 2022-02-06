@@ -11,6 +11,10 @@ In this project, you will review everything about Python:
 - Class
 - Private attribute
 - Getter/Setter
+  - How to update private attributes?? :
+    - [setattr Method](https://docs.python.org/3/library/functions.html#setattr)
+    - [getattr](https://docs.python.org/3/library/functions.html#getattr)
+    - [Use setattr to update](https://stackoverflow.com/questions/8187082/how-can-you-set-class-attributes-from-variable-arguments-kwargs-in-python)
 - Class method
 - Static method
 - Inheritance
@@ -28,6 +32,9 @@ In this project, you will review everything about Python:
   - [assertRaise and AssertRaiseRegex](https://www.tutorialspoint.com/unittest_framework/unittest_framework_exceptions_test.htm)
 
 - Read/Write file
+
+- Zip Method
+  - [Use for Looping Over Multiple Iterables](https://realpython.com/python-zip-function/)
 
 - args and kwargs
   - [blog](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)

@@ -4,6 +4,7 @@ This module hav ethe class Rectangle
 """
 
 
+import attr
 from models.base import Base
 
 
@@ -107,14 +108,13 @@ class Rectangle(Base):
             self.id, self.x, self.y, self.width, self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
 
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except IndexError:
-            pass
+        attr = ["id", "width", "height", "x", "y"]
+        if len(args) != 0:
+            for key, value in zip(attr, args):
+                setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)

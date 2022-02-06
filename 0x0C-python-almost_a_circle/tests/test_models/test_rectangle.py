@@ -117,6 +117,7 @@ class TetsRectangle_01_methods(unittest.TestCase):
     def test_07_init_update(self):
         """Test update method"""
 
+        """only with *args"""
         ru1 = Rectangle(1, 2, 0, 0, 1)
         r1 = "[Rectangle] (1) 0/0 - 1/2"
         self.assertEqual(ru1.__str__(), r1)
@@ -132,6 +133,32 @@ class TetsRectangle_01_methods(unittest.TestCase):
         ru1.update()
         r2 = "[Rectangle] (100) 3/8 - 23/10"
         self.assertEqual(ru1.__str__(), r2)
+
+        """With *args and **kwargs"""
+        r = Rectangle(1, 2, 0, 0, 3)
+        r2 = "[Rectangle] (3) 0/0 - 1/2"
+        self.assertEqual(r.__str__(), r2)
+        """Case not arguments"""
+        r.update()
+        r2 = "[Rectangle] (3) 0/0 - 1/2"
+        self.assertEqual(r.__str__(), r2)
+        r.update(id=100, x=10)
+        r2 = "[Rectangle] (100) 10/0 - 1/2"
+        self.assertEqual(r.__str__(), r2)
+        r.update(id=10, height=137)
+        r2 = "[Rectangle] (10) 10/0 - 1/137"
+        self.assertEqual(r.__str__(), r2)
+        r.update(1, 2, 3, id=100, x=10)
+        r2 = "[Rectangle] (1) 10/0 - 2/3"
+        self.assertEqual(r.__str__(), r2)
+        r.update(113, id=100, x=10)
+        r2 = "[Rectangle] (113) 10/0 - 2/3"
+        self.assertEqual(r.__str__(), r2)
+        r.update(id=100, x=10)
+        r2 = "[Rectangle] (100) 10/0 - 2/3"
+        self.assertEqual(r.__str__(), r2)
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            r.update(id=100, x="10")
 
 
 def suite():
