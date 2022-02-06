@@ -114,6 +114,25 @@ class TetsRectangle_01_methods(unittest.TestCase):
         str2 = "[Rectangle] (34) 0/0 - 1/2"
         self.assertEqual(rs2.__str__(), str2)
 
+    def test_07_init_update(self):
+        """Test update method"""
+
+        ru1 = Rectangle(1, 2, 0, 0, 1)
+        r1 = "[Rectangle] (1) 0/0 - 1/2"
+        self.assertEqual(ru1.__str__(), r1)
+        ru1.update(1, 1, 2, 2, 0)
+        r2 = "[Rectangle] (1) 2/0 - 1/2"
+        self.assertEqual(ru1.__str__(), r2)
+        ru1.update(100, 1, 10, 3, 8)
+        r2 = "[Rectangle] (100) 3/8 - 1/10"
+        self.assertEqual(ru1.__str__(), r2)
+        ru1.update(100, 23)
+        r2 = "[Rectangle] (100) 3/8 - 23/10"
+        self.assertEqual(ru1.__str__(), r2)
+        ru1.update()
+        r2 = "[Rectangle] (100) 3/8 - 23/10"
+        self.assertEqual(ru1.__str__(), r2)
+
 
 def suite():
     suite = unittest.TestSuite()

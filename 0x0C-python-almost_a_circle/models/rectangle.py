@@ -15,6 +15,8 @@ class Rectangle(Base):
         Public method:
             -area
             -display
+            - __str__
+            - update
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -100,6 +102,19 @@ class Rectangle(Base):
         return msg
 
     def __str__(self) -> str:
+        """string representation method"""
         return "[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(
             self.id, self.x, self.y, self.width, self.height
         )
+
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
