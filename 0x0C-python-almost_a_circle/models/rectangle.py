@@ -4,20 +4,22 @@ This module hav ethe class Rectangle
 """
 
 
-import attr
 from models.base import Base
 
 
 class Rectangle(Base):
     """Class Rectangle
     Arg:
+    ----
         - Private instances attributes:
-            - width, height,, x, y with getter and setters
+        -------------------------------
+        width, height,, x, y with getter and setters
         Public method:
-            -area
-            -display
-            - __str__
-            - update
+        --------------
+        area(width, height) -> int
+        display(self) -> str
+        __str__(self) -> str
+        update(self, *args, **kwargs) -> Nothing
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
