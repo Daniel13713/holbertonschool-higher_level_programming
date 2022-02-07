@@ -26,7 +26,11 @@ class Base:
     def to_json_string(list_dictionaries):
         """Json representation string"""
 
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if (
+            list_dictionaries is None
+            or len(list_dictionaries) == 0
+            or list_dictionaries[0] is None
+        ):
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -43,3 +47,14 @@ class Base:
         with open(filename, mode="w", encoding="utf-8") as file:
             obj_json = cls.to_json_string(list_dict)
             file.write(obj_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        from json string to dictionary, Deserialization
+        json_string is a string representing a list of dict
+        """
+
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
