@@ -2,6 +2,9 @@
 """This module have the Mother class Base"""
 
 
+import json
+
+
 class Base:
     """Class Base
     Arg:
@@ -11,23 +14,17 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        Constructor with only id instance
-        *you can assume that id is an integer
-        """
+        """Constructor with only id instance"""
 
-        self.id = id
-
-    @property
-    def id(self):
-        """getter if id"""
-        return self._id
-
-    @id.setter
-    def id(self, value):
-        """setter of the id"""
-        if value is not None:
-            self._id = value
+        if id is not None:
+            self.id = id
         else:
             Base.__nb_objects += 1
-            self._id = Base.__nb_objects
+            self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """Json representation string"""
+
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
