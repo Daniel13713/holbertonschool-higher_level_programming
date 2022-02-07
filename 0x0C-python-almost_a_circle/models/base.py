@@ -2,6 +2,7 @@
 """This module have the Mother class Base"""
 
 
+from fileinput import filename
 import json
 
 
@@ -69,3 +70,17 @@ class Base:
         obj = cls.dummy(cls)
         cls.update(obj, **dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                data = file.read()
+                dictionaries = cls.from_json_string(data)
+                list_objects = [cls.create(**dict) for dict in dictionaries]
+                return list_objects
+        except Exception:
+            return []
