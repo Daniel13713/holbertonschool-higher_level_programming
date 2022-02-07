@@ -18,6 +18,7 @@ In this project, you will review everything about Python:
 - Class method
 - Static method
 - Inheritance
+  - [Create parent class object from child class](https://stackoverflow.com/questions/57786711/python-inheritance-create-parent-class-object-from-child-class)
 
 - Unittest
   - [About testing in general, about __init__py file too](https://realpython.com/python-testing/)
