@@ -58,14 +58,14 @@ class Base:
     def dummy(self):
         """Intance to help to create classmethod"""
         if self.__name__ == "Rectangle":
-            return self(self.width, self.height, self.x, self.y, self.id)
+            return self(1, 1, 0, 0, 1)
         elif self.__name__ == "Square":
-            return self(self.width, self.x, self.y, self.id)
+            return self(1, 0, 0, 1)
 
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
 
-        cls.update(cls, **dictionary)
         obj = cls.dummy(cls)
+        cls.update(obj, **dictionary)
         return obj
