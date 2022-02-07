@@ -55,21 +55,17 @@ class Base:
             return []
         return json.loads(json_string)
 
-    def dummy(self, dict):
+    def dummy(self):
         """Intance to help to create classmethod"""
         if self.__name__ == "Rectangle":
-            return "[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(
-                self.id, self.x, self.y, self.width, self.height
-            )
+            return self(self.width, self.height, self.x, self.y, self.id)
         elif self.__name__ == "Square":
-            return "[Square] ({0}) {1}/{2} - {3}".format(
-                self.id, self.x, self.y, self.width
-            )
+            return self(self.width, self.x, self.y, self.id)
 
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
 
         cls.update(cls, **dictionary)
-        string = cls.dummy(cls, dictionary)
-        return string
+        obj = cls.dummy(cls)
+        return obj
