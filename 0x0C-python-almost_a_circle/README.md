@@ -49,6 +49,9 @@ In this project, you will review everything about Python:
 - JSON
 ![Serialitation - Deserialitation](https://github.com/Daniel13713/holbertonschool-higher_level_programming/blob/master/0x0C-python-almost_a_circle/images/Serialization.PNG)
 
+- CSV
+  - [Work with csv in python](https://realpython.com/python-csv/#what-is-a-csv-file)
+
 - VsCode
   - [Change a pattern](https://www.jasoft.org/Blog/post/buscar-y-reemplazar-en-visual-studio-code-cambiando-mayusculas-por-minusculas)
 

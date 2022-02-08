@@ -4,6 +4,7 @@
 
 from fileinput import filename
 import json
+import csv
 
 
 class Base:
@@ -84,3 +85,43 @@ class Base:
                 return list_objects
         except Exception:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serialize in csv"""
+
+        if list_objs is None or len(list_objs) == 0:
+            list_dict = []
+        else:
+            list_dict = [obj.to_dictionary() for obj in list_objs]
+        name = cls.__name__
+        filename = name + ".csv"
+        if name == "Square":
+            keys = ["id", "size", "x", "y"]
+        elif name == "Rectangle":
+            keys = ["id", "width", "height", "x", "y"]
+        with open(filename, mode="w", encoding="utf-8") as file:
+            writer = csv.DictWriter(file, fieldnames=keys)
+            writer.writeheader()
+            [writer.writerow(dict) for dict in list_dict]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserealitation in csv"""
+        count = 0
+        list_dict = []
+        name = cls.__name__
+        filename = name + ".csv"
+        with open(filename, mode="r", encoding="utf-8") as file:
+            csv_reader = csv.reader(file)
+            print(csv_reader)
+            for row in csv_reader:
+                if count == 0:
+                    keys = row
+                else:
+                    nums = [int(num) for num in row]
+                    list_dict.append(dict(zip(keys, nums)))
+                count = count + 1
+            list_objects = [cls.create(**dict) for dict in list_dict]
+
+        return list_objects
