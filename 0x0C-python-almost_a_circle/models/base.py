@@ -96,6 +96,7 @@ class Base:
             list_dict = [obj.to_dictionary() for obj in list_objs]
         name = cls.__name__
         filename = name + ".csv"
+        keys = []
         if name == "Square":
             keys = ["id", "size", "x", "y"]
         elif name == "Rectangle":
@@ -108,13 +109,13 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Deserealitation in csv"""
+
         count = 0
         list_dict = []
         name = cls.__name__
         filename = name + ".csv"
         with open(filename, mode="r", encoding="utf-8") as file:
             csv_reader = csv.reader(file)
-            print(csv_reader)
             for row in csv_reader:
                 if count == 0:
                     keys = row
