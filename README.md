@@ -1,4 +1,4 @@
-## Resources
+# Resources
 #### Read or watch:
 
 The Python tutorial (only the first three chapters below)
