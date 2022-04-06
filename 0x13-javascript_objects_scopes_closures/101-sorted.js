@@ -6,5 +6,4 @@ const new_dict = {};
 for (const key of id) {
   new_dict[key] = ocurrences.filter((e) => dict[e] === key);
 }
-console.log(dict);
 console.log(new_dict);
