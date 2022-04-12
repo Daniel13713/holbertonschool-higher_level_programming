@@ -18,7 +18,7 @@ request.get(URL, (error, response, body) => {
   }).filter((people) => {
     for (let i = 0; people[i]; i++) {
       /* filter by id 18 */
-      if (people[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
+      if (people[i].endsWith('18/')) {
         return people;
       }
     }
