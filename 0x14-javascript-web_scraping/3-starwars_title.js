@@ -7,9 +7,8 @@ const URL = 'https://swapi-api.hbtn.io/api/films/' + args[2];
 
 request.get(URL, (error, response, body) => {
   if (error) {
-    console.error('error:', error); // Print the error if one occurred
+    console.error('error:', error);
   }
-  console.log('code:', response.statusCode); // Print the response status code if a response was received
   const data = JSON.parse(body);
-  console.log(data['title']);
+  console.log(data.title);
 });
