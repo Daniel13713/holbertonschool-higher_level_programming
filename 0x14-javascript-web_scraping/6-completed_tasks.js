@@ -25,5 +25,5 @@ request.get(URL, (error, response, body) => {
       [index + 1]: value
     };
   }, {});
-  console.log(JSON.stringify(forId));
+  console.log(forId);
 });
