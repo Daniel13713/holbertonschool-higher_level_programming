@@ -13,9 +13,11 @@ request.get(URL, (error, response, body) => {
   const data = JSON.parse(body);
 
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const isCompleted = (user) => user.completed;
+  const usersCompleted = data.filter(isCompleted);
   const forId = arr.map((id) => {
-    return data.filter((user) => {
-      return user.userId === id && user.completed;
+    return usersCompleted.filter((user) => {
+      return user.userId === id;
     }).length;
   }).reduce((total, value, index) => {
     return {
@@ -23,5 +25,5 @@ request.get(URL, (error, response, body) => {
       [index + 1]: value
     };
   }, {});
-  console.log(forId);
+  console.log(JSON.stringify(forId));
 });
