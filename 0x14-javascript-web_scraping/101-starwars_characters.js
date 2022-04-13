@@ -10,14 +10,15 @@ request.get(URL, (error, response, body) => {
     console.error('error:', error);
   }
   const data = JSON.parse(body);
-  data.characters.forEach((person) => {
-    request.get(person, (error1, response1, body1) => {
+
+  data.characters.forEach(async (person) => {
+    const result = request.get(person, (error1, response1, body1) => {
       if (error1) {
         console.error('error:', error1);
       }
       const OneCharacter = JSON.parse(body1);
       console.log(OneCharacter.name);
     });
-    return 0;
+    return result;
   });
 });
