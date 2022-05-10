@@ -34,14 +34,18 @@ if __name__ == "__main__":
                 ORDER BY
                     id
                 ASC""".format(argument)
+
             cursor.execute(query)
 
             data = cursor.fetchall()
 
         if not data:
-            """print("Doesn't exist {0} state".format(argument))"""
+            """
+            print("Doesn't exist {0} state".format(argument))
+            """
         else:
             [print(state) for state in data]
     else:
-        """print("Usage: ./0-select_states.py
-        username password database state")"""
+        """
+        print("Usage: ./0-select_states.py username password database state")
+        """
