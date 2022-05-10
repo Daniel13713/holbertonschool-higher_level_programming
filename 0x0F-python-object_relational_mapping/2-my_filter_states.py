@@ -24,8 +24,16 @@ if __name__ == "__main__":
 
         with db.cursor() as cursor:
             """DON'T DO QUERY IN THIS FORM"""
-            query = "SELECT * FROM states WHERE name='{0}' ORDER BY id".format(
-                argument)
+            query = """
+                SELECT
+                    *
+                FROM
+                    states
+                WHERE
+                    name='{0}'
+                ORDER BY
+                    id
+                ASC""".format(argument)
             cursor.execute(query)
 
             data = cursor.fetchall()
