@@ -20,7 +20,7 @@ if __name__ == "__main__":
         db = MySQLdb.connect(**config)
         cursor = db.cursor()
 
-        query = "SELECT * FROM states WHERE BINARY\
+        query = "SELECT * FROM states WHERE BINARY/
         name RLIKE '^N' ORDER BY id ASC"
         cursor.execute(query)
 
