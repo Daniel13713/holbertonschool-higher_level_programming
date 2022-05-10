@@ -20,7 +20,7 @@ if __name__ == "__main__":
         db = MySQLdb.connect(**config)
         cursor = db.cursor()
 
-        query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+        query = "SELECT * FROM states WHERE name RLIKE '^N' ORDER BY id"
         cursor.execute(query)
 
         data = cursor.fetchall()
