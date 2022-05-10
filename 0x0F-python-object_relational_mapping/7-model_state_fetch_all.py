@@ -4,7 +4,7 @@
 """
 import sys
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
     """
@@ -22,12 +22,3 @@ if __name__ == "__main__":
     data = engine.execute(query)
     for state in data:
         print("{}: {}".format(state.id, state.name))
-
-    """
-    ANOTHER OPTION (not let by hokberton)
-    session = Session(engine)
-    data = session.query(State).order_by(State.id).all()
-    for state in data:
-        print("{}: {}".format(state.id, state.name))
-    session.close()
-    """
