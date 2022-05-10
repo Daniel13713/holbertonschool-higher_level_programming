@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument.
+script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument.
 """
 
 if __name__ == "__main__":
@@ -30,8 +31,9 @@ if __name__ == "__main__":
             data = cursor.fetchall()
 
         if not data:
-            print("Doesn't exist {0} state".format(argument))
+            """print("Doesn't exist {0} state".format(argument))"""
         else:
             [print(state) for state in data]
     else:
-        print("Usage: ./0-select_states.py username password database state")
+        """print("Usage: ./0-select_states.py
+        username password database state")"""
