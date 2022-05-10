@@ -44,8 +44,12 @@ if __name__ == "__main__":
 
         """Print data"""
         if not data:
+            """
             print("Doesn't exist {0} state".format(state))
+            """
         else:
             [print(state) for state in data]
     else:
+        """
         print("Usage: ./0-select_states.py username password database")
+        """
