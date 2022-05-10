@@ -19,7 +19,7 @@ if __name__ == "__main__":
     session = Session(engine)
     data = session.query(State).filter(
         State.name.contains("a")).order_by(
-        State.id)
+        State.id).all()
     if data is None:
         print("Nothing")
     else:
