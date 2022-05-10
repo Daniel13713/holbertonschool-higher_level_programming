@@ -39,20 +39,23 @@ if __name__ == "__main__":
                         cities.state_id = states.id
                     WHERE
                         states.name=%(state)s
+                    ORDER BY
+                        states.id ASC
                 """, {'state': state})
 
                 data = cursor.fetchall()  # obtain all data
+                """Print data"""
+                if not data:
+                    """
+                    print("Doesn't exist {0} state".format(state))
+                    """
+                else:
+                    states = [state[0] for state in data]
+                    print(*states, sep=', ', end="\n")
+
         except Exception as err:
             print(err)
 
-        """Print data"""
-        if not data:
-            """
-            print("Doesn't exist {0} state".format(state))
-            """
-        else:
-            states = [state[0] for state in data]
-            print(*states, sep=', ', end="\n")
     else:
         """
         print("Usage: ./0-select_states.py username password database state")
