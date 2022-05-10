@@ -20,11 +20,12 @@ if __name__ == "__main__":
         db = MySQLdb.connect(**config)
         cursor = db.cursor()
 
-        query = "SELECT * FROM states WHERE name RLIKE '^N' ORDER BY id"
+        query = "SELECT * FROM states WHERE name RLIKE '^N' ORDER BY id ASC"
         cursor.execute(query)
 
         data = cursor.fetchall()
-        db.close()
         [print(state) for state in data]
+        cursor.close()
+        db.close()
     else:
         """print("Usage: ./0-select_states.py username password database")"""
