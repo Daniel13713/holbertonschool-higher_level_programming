@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 WHERE
                     name
                 LIKE
-                    '{0}'
+                    '{:s}'
                 ORDER BY
                     id
                 ASC""".format(argument)

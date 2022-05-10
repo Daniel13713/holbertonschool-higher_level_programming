@@ -42,7 +42,7 @@ if __name__ == "__main__":
                     LIKE
                         %(state)s
                     ORDER BY
-                        states.id ASC
+                        cities.id ASC
                 """, {'state': state})
 
                 data = cursor.fetchall()  # obtain all data
