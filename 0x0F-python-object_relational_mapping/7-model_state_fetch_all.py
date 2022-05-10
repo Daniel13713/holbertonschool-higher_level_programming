@@ -1,15 +1,12 @@
 #!/usr/bin/python3
-"""
-    List a states table
-"""
+"""List a states table"""
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
 
+
 if __name__ == "__main__":
-    """
-        Don't execute when is imported
-    """
+    """Don't execute when is imported"""
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
             sys.argv[1],
