@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
         query = """
             SELECT * FROM states WHERE BINARY
-        name RLIKE '^N' ORDER BY id ASC"""
+        name LIKE 'N%' ORDER BY id ASC"""
         cursor.execute(query)
 
         data = cursor.fetchall()
