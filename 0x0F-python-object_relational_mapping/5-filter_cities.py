@@ -38,7 +38,9 @@ if __name__ == "__main__":
                     ON
                         cities.state_id = states.id
                     WHERE
-                        states.name=%(state)s
+                        states.name
+                    LIKE
+                        %(state)s
                     ORDER BY
                         states.id ASC
                 """, {'state': state})

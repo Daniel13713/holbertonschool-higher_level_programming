@@ -30,7 +30,9 @@ if __name__ == "__main__":
                 FROM
                     states
                 WHERE
-                    name='{0}'
+                    name
+                LIKE
+                    '{0}'
                 ORDER BY
                     id
                 ASC""".format(argument)
