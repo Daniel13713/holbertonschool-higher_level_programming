@@ -54,7 +54,9 @@ if __name__ == "__main__":
                     print(*states, sep=', ', end="\n")
 
         except Exception as err:
+            """
             print(err)
+            """
 
     else:
         """
