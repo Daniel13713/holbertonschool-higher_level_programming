@@ -27,4 +27,4 @@ if __name__ == "__main__":
         db.close()
         [print(state) for state in data]
     else:
-        print("Usage: ./0-select_states.py username password database")
+        """print("Usage: ./0-select_states.py username password database")"""
