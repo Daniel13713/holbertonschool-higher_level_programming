@@ -54,6 +54,7 @@ if __name__ == "__main__":
                 else:
                     states = [state[0] for state in data]
                     print(*states, sep=', ', end="\n")
+            db.close()
 
         except Exception as err:
             """
