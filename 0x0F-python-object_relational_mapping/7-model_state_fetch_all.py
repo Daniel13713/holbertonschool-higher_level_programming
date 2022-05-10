@@ -15,7 +15,6 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    query = "SELECT * FROM states ORDER BY states.id;"
-    data = engine.execute(query)
+    data = engine.execute("SELECT * FROM states ORDER BY states.id;")
     for state in data:
         print("{}: {}".format(state.id, state.name))
