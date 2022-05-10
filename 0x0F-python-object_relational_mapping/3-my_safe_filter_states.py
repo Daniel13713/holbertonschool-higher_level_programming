@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument.
+script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument.
 """
 
 if __name__ == "__main__":
@@ -22,14 +23,23 @@ if __name__ == "__main__":
         db = MySQLdb.connect(**config)
 
         with db.cursor() as cursor:
-            cursor.execute(
-                "SELECT * FROM states WHERE name = %(state)s ORDER BY id", {'state': state})
+            cursor.execute("""
+                SELECT
+                    *
+                FROM
+                    states
+                WHERE
+                    name = %(state)s
+                ORDER BY
+                    id
+                """, {'state': state})
 
             data = cursor.fetchall()
 
         if not data:
-            print("Doesn't exist {0} state".format(state))
+            """print("Doesn't exist {0} state".format(state))"""
         else:
             [print(state) for state in data]
     else:
-        print("Usage: ./0-select_states.py username password database state")
+        """print("Usage: ./0-select_states.py
+        username password database state")"""
