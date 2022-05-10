@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Modules
+mysqlclient==2.0.3
+sqlalchemy==1.4.36
+pycodestyle==2.8.0
+autopep8==1.6.0

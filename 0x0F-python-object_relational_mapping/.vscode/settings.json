@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "hbtn_0e_4_usa",
+            "database": "hbtn_0e_4_usa",
+            "username": "daniel",
+            "password": "1375"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "hbtn_0e_0_usa",
+            "database": "hbtn_0e_0_usa",
+            "username": "daniel",
+            "password": "1375"
+        }
+    ]
+}
