@@ -18,8 +18,19 @@ class City(Base):
         autoincrement=True,
         nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False)
+    state_id = Column(
+        Integer,
+        ForeignKey(
+            'states.id',
+            ondelete='CASCADE'),
+        nullable=False)
 
+    state = relationship(
+        'State', backref=backref(
+            'cities', passive_deletes=True))
+
+    """
     __table_args__ = (
         ForeignKeyConstraint(['state_id'], ['states.id']),
     )
+    """
