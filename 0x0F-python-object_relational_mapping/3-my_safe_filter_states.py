@@ -37,9 +37,13 @@ if __name__ == "__main__":
             data = cursor.fetchall()
 
         if not data:
-            """print("Doesn't exist {0} state".format(state))"""
+            """
+            print("Doesn't exist {0} state".format(state))
+            """
         else:
             [print(state) for state in data]
     else:
-        """print("Usage: ./0-select_states.py
-        username password database state")"""
+        """
+        print("Usage: ./0-select_states.py
+        username password database state")
+        """

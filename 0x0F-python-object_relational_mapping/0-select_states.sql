@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS states (
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 
 -- @BLOCK
-DROP DATABASE hbtn_0e_0_usa;
+-- DROP DATABASE hbtn_0e_0_usa;

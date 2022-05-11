@@ -40,7 +40,9 @@ if __name__ == "__main__":
 
                 data = cursor.fetchall()  # obtain all data
         except Exception as err:
+            """
             print(err)
+            """
 
         """Print data"""
         if not data:
