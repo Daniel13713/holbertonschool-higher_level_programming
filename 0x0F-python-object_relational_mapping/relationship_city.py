@@ -34,9 +34,3 @@ class City(Base):
     state = relationship(
         'State', backref=backref(
             'cities', passive_deletes=True))
-
-    """
-    __table_args__ = (
-        ForeignKeyConstraint(['state_id'], ['states.id']),
-    )
-    """
