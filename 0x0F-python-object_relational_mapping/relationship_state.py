@@ -21,4 +21,6 @@ class State(Base):
         autoincrement=True,
         nullable=False)
     name = Column(String(128), nullable=False)
-    cities = relationship('City', backref="state")
+    cities = relationship(
+        'City', backref="state", cascade="all, delete-orphan"
+        )
