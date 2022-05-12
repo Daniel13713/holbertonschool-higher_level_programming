@@ -22,19 +22,14 @@ if __name__ == "__main__":
         new_state = State(
             name="California"
         )
+        """Insert new City with state id created"""
+        new_city = City(
+                name="San Francisco"
+            )
+        new_state.cities = [
+            new_city
+        ]
         session.add(new_state)
         session.commit()
 
-        """Fetch state created"""
-        data = session.query(State).order_by(
-            desc(State.id)).first()
-        """Id of the new state"""
-        id_state = data.id
-
-        """Insert new City with state id created"""
-        new_city = City(
-            name="San Francisco",
-            state_id=id_state
-        )
-        session.add(new_city)
         session.commit()
