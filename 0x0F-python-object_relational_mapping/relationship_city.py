@@ -4,7 +4,7 @@ Create a model City with sqlalchemy
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKeyConstraint
-from model_state import Base, State
+from relationship_state import Base
 
 
 class City(Base):

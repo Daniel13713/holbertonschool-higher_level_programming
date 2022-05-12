@@ -6,7 +6,7 @@ import sys
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy import create_engine, desc
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -17,7 +17,8 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    with Session(engine) as session:
+    Session = sessionmaker(bind=engine)
+    with Session() as session:
         """Insert state"""
         new_state = State(
             name="California"
