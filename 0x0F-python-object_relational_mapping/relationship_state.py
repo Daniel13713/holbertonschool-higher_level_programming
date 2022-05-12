@@ -21,3 +21,4 @@ class State(Base):
         autoincrement=True,
         nullable=False)
     name = Column(String(128), nullable=False)
+    cities = relationship('City', backref="state")
