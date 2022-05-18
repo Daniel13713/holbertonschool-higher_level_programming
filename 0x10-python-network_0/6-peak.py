@@ -7,12 +7,15 @@ def find_peak(list_of_integers):
     value = None
     if size == 0:
         value = None
-    elif size == 1:
+    if size == 1:
         value = arr[0]
-    else:
-        for i in range(1, size - 1):
-            if arr[i] >= arr[i - 1] and arr[i] >= arr[i + 1]:
-                value = arr[i]
+    if size > 1 and arr[0] >= arr[1]:
+        value = arr[0]
+    if size > 2 and arr[size-1] >= arr[size-2]:
+        return arr[size-1]
+    for i in range(1, size - 1):
+        if arr[i] >= arr[i - 1] and arr[i] >= arr[i + 1]:
+            value = arr[i]
     return value
 
 
