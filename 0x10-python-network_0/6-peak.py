@@ -17,4 +17,3 @@ def find_peak(list_of_integers):
         if arr[i] >= arr[i - 1] and arr[i] >= arr[i + 1]:
             value = arr[i]
     return value
-

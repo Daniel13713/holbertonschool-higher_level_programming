@@ -1,2 +1,2 @@
 #Time complexity
-O(n)
+O(1)
