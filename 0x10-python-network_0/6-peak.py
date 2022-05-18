@@ -2,18 +2,17 @@
 # Write a function that finds a peak in a list of unsorted integers.
 def find_peak(list_of_integers):
     """Find the maximum number"""
-    arr = list_of_integers
-    size = len(arr)
-    value = None
-    if size == 0:
-        value = None
-    if size == 1:
-        value = arr[0]
-    if size > 1 and arr[0] >= arr[1]:
-        value = arr[0]
-    if size > 2 and arr[size - 1] >= arr[size - 2]:
-        return arr[size - 1]
-    for i in range(1, size - 1):
-        if arr[i] >= arr[i - 1] and arr[i] >= arr[i + 1]:
-            value = arr[i]
-    return value
+    lst = list_of_integers
+    if len(lst) == 0:
+        return None
+    start, end = 0, len(lst) - 1
+    while start < end:
+        mid = start + (end - start) // 2
+    # Check if it's a peak
+        if lst[mid] > lst[mid - 1] and lst[mid] > lst[mid + 1]:
+            return lst[mid]
+        if lst[mid - 1] > lst[mid + 1]:
+            end = mid
+        else:
+            start = mid + 1
+    return lst[start]
