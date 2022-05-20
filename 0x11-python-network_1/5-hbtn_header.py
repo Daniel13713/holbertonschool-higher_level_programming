@@ -6,6 +6,5 @@ import requests
 
 if __name__ == "__main__":
     URL = argv[1]
-    with requests.session() as session:
-        response = session.get(URL)
+    with requests.get(URL) as response:
         print(response.headers["X-Request-Id"])
