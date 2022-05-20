@@ -4,6 +4,7 @@
 from urllib.request import urlopen
 from sys import argv
 
-URL = argv[1]
-with urlopen(URL) as response:
-    print(response.headers["X-Request-Id"])
+if __name__ == "__main__":
+    URL = argv[1]
+    with urlopen(URL) as response:
+        print(response.headers["X-Request-Id"])
