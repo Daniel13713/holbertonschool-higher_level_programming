@@ -9,7 +9,6 @@ import requests
 
 if __name__ == "__main__":
     URL = "http://0.0.0.0:5000/search_user"
-    print(len(argv))
     if len(argv) > 1:
         q = argv[1]
     else:
@@ -18,9 +17,9 @@ if __name__ == "__main__":
     try:
         response = requests.post(URL, data)
         data_json = response.json()
-        id = data_json["id"]
-        name = data_json["name"]
         if len(data_json) != 0:
+            id = data_json["id"]
+            name = data_json["name"]
             print("[{}] {}".format(id, name))
         else:
             print("No result")
