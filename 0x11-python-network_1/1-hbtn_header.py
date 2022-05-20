@@ -2,7 +2,7 @@
 """What's my status?"""
 
 from urllib.request import urlopen
-import sys
+from sys import argv
 
 
 URL = argv[1]
