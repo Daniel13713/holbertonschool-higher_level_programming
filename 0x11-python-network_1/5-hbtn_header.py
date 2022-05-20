@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""What's my status?"""
+"""
+sends a request to the URL and displays the value of
+the variable X-Request-Id in the response header
+"""
 
 from sys import argv
 import requests
 
 if __name__ == "__main__":
     URL = argv[1]
-    with requests.get(URL) as response:
-        print(response.headers["X-Request-Id"])
+    response = requests.get(URL)
+    print(response.headers.get("X-Request-Id"))
