@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """What's my status?"""
 
-import requests
 from sys import argv
+import requests
 
 if __name__ == "__main__":
     URL = argv[1]
